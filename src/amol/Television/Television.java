@@ -5,6 +5,8 @@ import javax.security.auth.login.LoginException;
 import amol.Television.Commands.Clear;
 import amol.Television.Events.GuildMemberJoin;
 import amol.Television.Events.GuildMemberLeave;
+import amol.Television.Events.GuildMessageReactionAdd;
+import amol.Television.Events.GuildMessageReceived;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -26,5 +28,7 @@ public class Television {
 		jda.addEventListener(new Clear());
 		jda.addEventListener(new GuildMemberJoin());
 		jda.addEventListener(new GuildMemberLeave());
+		jda.addEventListener(new GuildMessageReceived());
+		jda.addEventListener(new GuildMessageReactionAdd());
 	}
 }
